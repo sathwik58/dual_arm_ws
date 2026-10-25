@@ -4,6 +4,8 @@ ROS 2 Humble workspace for a dual-arm drawing simulation in Ignition Gazebo.
 A Franka Panda draws shapes on a table with a pen, and a UR5 with a wrist camera scans
 the drawing, recognises the shape and writes a report on how accurate it was.
 
+Demo video: [docs/demo.webm](docs/demo.webm)
+
 My own package is `src/pattern_ws_repo/pattern_drawer`. Its README has the details
 and the launch steps. The other folders in `src/` are the upstream robot packages it
 depends on, added as git submodules.
