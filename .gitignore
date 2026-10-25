@@ -1,0 +1,18 @@
+# colcon output
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+
+# run outputs
+src/pattern_ws_repo/pattern_drawer/runs/
+
+# editors / tools
+.vscode/
+.idea/
+.claude/
+*.swp
+*.bak

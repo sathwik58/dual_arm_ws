@@ -1,0 +1,31 @@
+/panda/controller_manager:
+  ros__parameters:
+    update_rate: 500  # Hz
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    joint_trajectory_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+/panda/joint_trajectory_controller:
+  ros__parameters:
+    joints:
+      - panda_fer_joint1
+      - panda_fer_joint2
+      - panda_fer_joint3
+      - panda_fer_joint4
+      - panda_fer_joint5
+      - panda_fer_joint6
+      - panda_fer_joint7
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    state_publish_rate: 100.0
+    action_monitor_rate: 20.0
+    allow_partial_joints_goal: false
+    constraints:
+      stopped_velocity_tolerance: 0.2
+      goal_time: 0.0

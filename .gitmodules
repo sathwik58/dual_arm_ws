@@ -1,0 +1,15 @@
+[submodule "src/franka_ros2"]
+	path = src/franka_ros2
+	url = https://github.com/frankarobotics/franka_ros2.git
+[submodule "src/franka_description"]
+	path = src/franka_description
+	url = https://github.com/frankarobotics/franka_description.git
+[submodule "src/libfranka"]
+	path = src/libfranka
+	url = https://github.com/frankarobotics/libfranka.git
+[submodule "src/Universal_Robots_ROS2_Gazebo_Simulation"]
+	path = src/Universal_Robots_ROS2_Gazebo_Simulation
+	url = https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation.git
+[submodule "src/olvx_descriptions_module"]
+	path = src/olvx_descriptions_module
+	url = https://github.com/olive-robotics/olvx_descriptions_module.git

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ur">
+  <xacro:include filename="$(find ur_description)/urdf/ur.urdf.xacro"/>
+  <xacro:include filename="$(find pattern_drawer)/urdf/camera.xacro"/>
+
+  <xacro:camera prefix="ur5_" parent="ur5_tool0"/>
+</robot>

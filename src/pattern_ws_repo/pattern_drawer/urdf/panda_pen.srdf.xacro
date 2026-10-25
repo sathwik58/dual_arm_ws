@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="fer">
+
+  <!-- Official Franka SRDF (groups panda_fer_arm, panda_fer_hand ...) -->
+  <xacro:include filename="$(find franka_description)/robots/fer/fer.srdf.xacro"/>
+
+  <!-- The pen is held by the hand: these contacts are expected, not collisions -->
+  <disable_collisions link1="panda_pen_link" link2="panda_fer_leftfinger"  reason="Adjacent"/>
+  <disable_collisions link1="panda_pen_link" link2="panda_fer_rightfinger" reason="Adjacent"/>
+  <disable_collisions link1="panda_pen_link" link2="panda_fer_hand"        reason="Adjacent"/>
+  <disable_collisions link1="panda_pen_link" link2="panda_fer_link7"       reason="Never"/>
+
+</robot>

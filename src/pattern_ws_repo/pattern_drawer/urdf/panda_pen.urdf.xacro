@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="fer">
+
+  <!-- Official Franka Gazebo robot (all launch mappings still apply) -->
+  <xacro:include filename="$(find franka_gazebo_bringup)/urdf/franka_arm.gazebo.xacro"/>
+
+  <xacro:property name="pen_len" value="0.10"/>
+  <xacro:property name="pen_r"   value="0.006"/>
+  <xacro:property name="pen_m"   value="0.02"/>
+  <xacro:property name="gap"     value="0.005"/>
+
+
+  <link name="panda_pen_link">
+    <visual>
+      <origin xyz="0 0 ${pen_len/2}"/>
+      <geometry><cylinder radius="${pen_r}" length="${pen_len}"/></geometry>
+      <material name="pen_blue"><color rgba="0.1 0.2 0.9 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 ${pen_len/2}"/>
+      <geometry><cylinder radius="${pen_r}" length="${pen_len}"/></geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 ${pen_len/2}"/>
+      <mass value="${pen_m}"/>
+      <inertia ixx="${pen_m*(3*pen_r*pen_r+pen_len*pen_len)/12}" ixy="0" ixz="0"
+               iyy="${pen_m*(3*pen_r*pen_r+pen_len*pen_len)/12}" iyz="0"
+               izz="${pen_m*pen_r*pen_r/2}"/>
+    </inertial>
+  </link>
+  <joint name="panda_pen_joint" type="fixed">
+    <parent link="panda_fer_hand_tcp"/>
+    <child link="panda_pen_link"/>
+    <origin xyz="0 0 ${gap}"/>
+  </joint>
+  <link name="panda_pen_tip"/>
+  <joint name="panda_pen_tip_joint" type="fixed">
+    <parent link="panda_pen_link"/>
+    <child link="panda_pen_tip"/>
+    <origin xyz="0 0 ${pen_len}"/>
+  </joint>
+
+</robot>
